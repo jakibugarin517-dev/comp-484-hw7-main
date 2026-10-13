@@ -1,6 +1,6 @@
-# HW6 Resume Site   https://jakibugarin517-dev.github.io/comp-484-hw6/
+# HW7 Resume Site   https://jakibugarin517-dev.github.io/comp-484-hw7-main/
 
-HW6 Resume Site
+HW7 Resume Site
 
 This is my resume website for HW6. I added my VRChat creator and texture artist work, plus Pound Industries.
 

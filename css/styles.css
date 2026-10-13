@@ -1,0 +1,243 @@
+/* Color palette I picked:
+#000000 is my black background
+#061114 is the darker color for sections
+#00E5FF is the cyan for text and borders
+#8BEFFF is a lighter cyan for the other text
+*/
+
+/* Box model fix: padding and borders are included in an element's width. */
+* {
+    box-sizing: border-box;
+}
+
+/* These are the main colors I use around the whole page. */
+:root {
+    --page-bg: #000000;
+    --section-bg: #061114;
+    --cyan: #00E5FF;
+    --text: #00E5FF;
+    --muted: #8BEFFF;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--page-bg);
+    color: var(--text);
+    font-family: 'Source Sans 3', sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.2;
+}
+
+h1 {
+    margin: 0;
+    font-size: clamp(2.5rem, 6vw, 4.2rem);
+    font-weight: 800;
+    letter-spacing: -0.04em;
+}
+
+h2 {
+    margin-top: 0;
+    margin-bottom: 22px;
+    font-size: clamp(1.7rem, 4vw, 2.4rem);
+    font-weight: 700;
+}
+
+h3 {
+    margin: 0 0 8px;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+p {
+    margin-top: 0;
+}
+
+/* Reusable wrapper keeps content centered and stops lines getting too wide. */
+.content-wrap {
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 50px;
+    overflow: hidden;
+}
+
+/* I gave the top and bottom their own background so they stand out. */
+.intro {
+    background: var(--section-bg);
+    border-bottom: 3px solid var(--cyan);
+}
+
+.profile-img {
+    width: 100%;
+    height: auto;
+    border: 3px solid var(--cyan);
+    border-radius: 50%;
+}
+
+.column-narrow {
+    width: 30%;
+    float: left;
+    padding-right: 3%;
+    min-height: 175px;
+}
+
+.column-wide {
+    width: 70%;
+    float: left;
+    min-height: 225px;
+}
+
+header h1,
+header h2 {
+    margin: 0;
+}
+
+.intro h2 {
+    color: var(--cyan);
+    font-size: clamp(1.15rem, 2.5vw, 1.55rem);
+    margin: 0;
+}
+
+.intro-text p:last-child {
+    max-width: 680px;
+    margin-bottom: 0;
+    color: var(--muted);
+}
+
+.eyebrow {
+    margin-bottom: 10px;
+    color: var(--cyan);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.75rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+}
+
+main {
+    width: min(100% - 40px, 1000px);
+    margin: 48px auto;
+}
+
+/* I used these boxes to separate my projects, school, and skills. */
+.resume-section {
+    margin-bottom: 28px;
+    background: var(--section-bg);
+    border: 1px solid rgba(0, 229, 255, 0.7);
+    border-left: 5px solid var(--cyan);
+    border-radius: 12px;
+}
+
+.resume-section h2 {
+    margin-bottom: 28px;
+}
+
+.resume-item + .resume-item {
+    margin-top: 30px;
+    padding-top: 26px;
+    border-top: 1px solid rgba(139, 239, 255, 0.35);
+}
+
+.item-meta {
+    margin-bottom: 14px;
+    color: var(--cyan);
+    font-weight: 700;
+}
+
+.resume-item p:not(.item-meta),
+.resume-item li {
+    color: var(--muted);
+}
+
+.resume-item ul {
+    padding-left: 22px;
+}
+
+.resume-item li::marker {
+    color: var(--cyan);
+}
+
+.skill-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.skill-list li {
+    padding: 8px 14px;
+    color: var(--cyan);
+    border: 1px solid var(--cyan);
+    border-radius: 999px;
+    font-weight: 600;
+}
+
+.contact {
+    background: var(--section-bg);
+    border-top: 3px solid var(--cyan);
+    text-align: center;
+}
+
+.contact h2 {
+    margin-bottom: 12px;
+}
+
+.contact > .content-wrap > p:not(.eyebrow):not(.copyright) {
+    color: var(--muted);
+}
+
+.contact-info a {
+    display: inline-block;
+    padding: 10px;
+    margin: 6px;
+    color: var(--cyan);
+    border: 1px solid var(--cyan);
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.contact-info a:hover,
+.contact-info a:focus {
+    color: var(--page-bg);
+    background: var(--cyan);
+}
+
+.copyright {
+    margin-bottom: 0;
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+@media (max-width: 650px) {
+    .content-wrap {
+        padding: 28px 24px;
+    }
+
+    .column-narrow,
+    .column-wide {
+        float: none;
+        width: 100%;
+        min-height: 0;
+        padding-right: 0;
+    }
+
+    .profile-img {
+        width: 180px;
+        max-width: 100%;
+        margin-bottom: 24px;
+    }
+
+    .resume-item .column-wide {
+        margin-top: 12px;
+    }
+}
